@@ -28,8 +28,21 @@ Saved work on side using ''' git stash ''' . Removed the bug, staged and commite
 
 ## change branch history
 
-Used ''' git rebase hot-bugfix ''' to append the change-branch-history to hot-bugfix. 
+Used ''' git rebase hot-bugfix ''' to append the change-branch-history to hot-bugfix.
 
 ## remove ignored file
 
-Used ''' git rm --cached ignored.txt ''' to stop the file from being tracked. Then commited the chages. 
+Used ''' git rm --cached ignored.txt ''' to stop the file from being tracked. Then commited the chages.
+
+## change a letter case in the filename of an already tracked file
+
+Used ''' git mv File.txt file.txt ''' to rename file then commited the changes.
+
+## fix typographic mistake in the last commit
+
+First, fixed the typo in the file. Then, staged the changes and used ''' git commit --amend ''' to change the last commit. Updated last commit message which opened in vi editor. 
+
+## forge the commit's date
+
+Used ''' git commit --amend --date=1987-04-07T22:13:13 '''. Modified date and saved. 
+
