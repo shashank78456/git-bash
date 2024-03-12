@@ -12,7 +12,7 @@ Used ''' git reset ''' to remove all files from staging area. Now added B.txt to
 
 ## ignore unwanted files
 
-Created a .gitignore file and wrote into it " *.<extension-name> " for ignoring all files with the given extensions and " <library-name>/ " for ignoring directories. Then staged and commited the changes.
+Created a .gitignore file and wrote into it " \*.<extension-name> " for ignoring all files with the given extensions and " <library-name>/ " for ignoring directories. Then staged and commited the changes.
 
 ## chase branch that escaped
 
@@ -40,9 +40,12 @@ Used ''' git mv File.txt file.txt ''' to rename file then commited the changes.
 
 ## fix typographic mistake in the last commit
 
-First, fixed the typo in the file. Then, staged the changes and used ''' git commit --amend ''' to change the last commit. Updated last commit message which opened in vi editor. 
+First, fixed the typo in the file. Then, staged the changes and used ''' git commit --amend ''' to change the last commit. Updated last commit message which opened in vi editor.
 
 ## forge the commit's date
 
-Used ''' git commit --amend --date=1987-04-07T22:13:13 '''. Modified date and saved. 
+Used ''' git commit --amend --date=1987-04-07T22:13:13 '''. Modified date and saved.
 
+## fix typographic mistake in old commit
+
+Used ''' git rebase -i HEAD^^ ''' to back 2 commits. Added edit inplace of pick in target commit. Made changes in file.txt, staged and commited using ''' git commit --amend '''. Changed commit message. Used ''' git rebase continue '''. Resolved merge conflict. Staged file.txt and finished rebase.
