@@ -46,7 +46,3 @@ delete_keys() {
     ((i++))
     done
 }
-
-renew_keys() {
-
-}
