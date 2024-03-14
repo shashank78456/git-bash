@@ -3,6 +3,9 @@
 source manage.sh
 
 menu() {
+
+    if which gpg >/dev/null
+    then
     while true;
     do
    
@@ -46,8 +49,14 @@ menu() {
 
     else
         echo "Please enter a valid choice!!"
+
     fi
     done
+
+    else
+    echo "GPG not found. Please install GPG."
+
+    fi
 }
 
 menu

@@ -14,11 +14,23 @@ view_keys() {
 }
 
 add_key() {
+    echo "==========================================================================="
     echo "Select the key to be added to git from the list"
-    gpg --list-secret-keys --keyid-format=long
+    keylist=$(gpg --list-secret-keys --keyid-format=long | awk /sec/ | cut -b 15-30)
+    karr=()
+    c=1
+    for i in $keylist
+    do
+        echo "$c. $i"
+        karr+=("$i")
+        ((c++))
+    done
     echo -e "==========================================================================="
-    read -p "Enter the key: " key
+    read -p "Enter the key number : " keyn
     
+    ((keyn--))
+    key=${karr[$keyn]}
+
     gpg --armor --export $key
     git config --global user.signingkey $key
     git config --global commit.gpgsign true
@@ -29,20 +41,25 @@ add_key() {
 delete_keys() {
     echo "==========================================================================="
     echo "Select the Key(s) to be deleted from the list"
-    gpg --list-secret-keys
-    echo -e "==========================================================================="
-    read -p "Enter the number of keys to be deleted: " ndk
 
-    i=0
-    while [ $i -lt $ndk ]
+    keylist=$(gpg --list-secret-keys --keyid-format=long | awk /sec/ | cut -b 15-30)
+    karr=()
+    c=1
+    for i in $keylist
     do
-    echo "==========================================================================="
-    read -p "Enter Key: " keyid
+        echo "$c. $i"
+        karr+=("$i")
+        ((c++))
+    done
+
+    echo -e "==========================================================================="
+    read -p "Enter the key-number of the key to be deleted: " kyn
+
+    ((kyn--))
+    keyid=${karr[kyn]}
 
     gpg --delete-secret-key $keyid
     gpg --delete-key $keyid
     echo "Selected key has been deleted"
     echo -e "==========================================================================="
-    ((i++))
-    done
 }
