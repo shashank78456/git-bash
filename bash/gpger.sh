@@ -5,8 +5,15 @@ source manage.sh
 menu() {
     while true;
     do
+   
+    echo "               .__"                               
+    echo "__  _  __ ____ |  |   ____  ____   _____   ____"  
+    echo "\ \/ \/ // __ \|  | _/ ___\/  _ \ /     \_/ __ \ " 
+    echo " \     /\  ___/|  |_\  \__(  <_> )  Y Y  \  ___/" 
+    echo "  \/\_/  \___  >____/\___  >____/|__|_|  /\___  >"
+    echo "             \/          \/            \/     \/" 
     echo "==========================================================================="
-    echo "Welcome!! Please choose from the following actions."
+    echo "Please choose from the following actions."
     echo "1. Generate New GPG key"
     echo "2. Add GPG key to git"
     echo "3. View GPG keys"
