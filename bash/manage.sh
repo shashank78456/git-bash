@@ -30,7 +30,7 @@ add_key() {
     
     len=${#karr[@]}
 
-    if [ "$kyn" -le "$len" ]
+    if [ "$kyn" -le "$len" ]  &&  [ "$kyn" -gt 0 ]
     then
     ((keyn--))
     key=${karr[$keyn]}
@@ -66,7 +66,7 @@ delete_keys() {
 
     len=${#karr[@]}
 
-    if [ "$kyn" -le "$len" ]
+    if [ "$kyn" -le "$len" ]  &&  [ "$kyn" -gt 0 ]
     then
     ((kyn--))
     keyid=${karr[kyn]}
