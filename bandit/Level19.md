@@ -2,4 +2,9 @@ Used commands at the end of `ssh` statement to remotely execute commands without
 
 Used `ssh bandit18@bandit.labs.overthewire.org -p 2220 ls` to list the files and check if the readme file is on the home directory. Then used `ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme` to get the flag.
 
+```
+ssh bandit18@bandit.labs.overthewire.org -p 2220 ls
+ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
+```
+
 Flag: `awhqfNnAbc1naukrpqDYcF95h7HoMTrC`

@@ -1,4 +1,10 @@
-Used `diff passwords.new passwords.old` to get the line which differs in these two files. Got output:
+Used `diff passwords.new passwords.old` to get the line which differs in these two files.
+
+```
+diff passwords.new passwords.old
+```
+
+Got output:
 ```
 < hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
 ---

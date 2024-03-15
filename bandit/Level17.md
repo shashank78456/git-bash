@@ -1,4 +1,10 @@
-Used `nmap -sV localhost -p31000-32000` to check which ports were working. Got the following output.
+Used `nmap -sV localhost -p31000-32000` to check which ports were working.
+
+```
+nmap -sV localhost -p31000-32000
+```
+
+Got the following output.
 
 ```
 Not shown: 996 closed ports
@@ -12,6 +18,10 @@ PORT      STATE SERVICE     VERSION
 
 `nmap` is used to get information of the client we are trying to connect to.
 This shows that only 5 ports are open and only 2 out of them are ssl. `31518` is echo port so discard it. Used `openssl s_client -connect localhost:31790` on `31790` port. Got the following output:
+
+```
+openssl s_client -connect localhost:31790
+```
 
 ```
 JQttfApK4SeyHwDlI9SXGR50qclOAil1
@@ -45,4 +55,13 @@ vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 -----END RSA PRIVATE KEY-----
 ```
 
-Got a private key. Made a directory `\tmp\keyssh` and saved the private key in a file `\tmp\keysshkey.private`. Changed to `\tmp\keyssh` directory. Changed its permissions with `chmod 700 key.private` , then used `ssh -i key.private bandit17@localhost -p 2220` to access next level.
+Got a private key. Made a directory `\tmp\keyssh`, changed to `\tmp\keyssh` directory and saved the private key in a file `\tmp\keysshkey.private`. Changed its permissions with `chmod 700 key.private` , then used `ssh -i key.private bandit17@localhost -p 2220` to access next level.
+
+```
+mkdir \tmp\keyssh
+cd \tmp\keyssh
+touch keysshkey.private
+vi keysshkey.private
+chmod 700 key.private
+ssh -i key.private bandit17@localhost -p 2220
+```
