@@ -3,8 +3,7 @@ Used the following commands:
 ls
 strings data.txt | grep "==="
 ```
-
-Used `strings` to get the human-readable text from `data.txt` file, then piped the output into `grep "===" ` to get lines which contain several `=` .
+`strings` gives the text data from a file. Used `strings` to get the human-readable text from `data.txt` file, then piped the output into `grep "===" ` to get lines which contain several `=` .
 
 Got the following output:
 ```

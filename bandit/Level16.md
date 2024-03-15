@@ -4,4 +4,6 @@ Correct!
 JQttfApK4SeyHwDlI9SXGR50qclOAil1
 ```
 
+`openssl s_client -connect` command is used to connect to a client using ssl encryption. 
+
 Flag: `JQttfApK4SeyHwDlI9SXGR50qclOAil1`

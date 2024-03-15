@@ -10,6 +10,7 @@ PORT      STATE SERVICE     VERSION
 31960/tcp open  echo
 ```
 
+`nmap` is used to get information of the client we are trying to connect to.
 This shows that only 5 ports are open and only 2 out of them are ssl. `31518` is echo port so discard it. Used `openssl s_client -connect localhost:31790` on `31790` port. Got the following output:
 
 ```
@@ -43,4 +44,5 @@ dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
 vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 -----END RSA PRIVATE KEY-----
 ```
+
 Got a private key. Made a directory `\tmp\keyssh` and saved the private key in a file `\tmp\keysshkey.private`. Changed to `\tmp\keyssh` directory. Changed its permissions with `chmod 700 key.private` , then used `ssh -i key.private bandit17@localhost -p 2220` to access next level.

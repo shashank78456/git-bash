@@ -1,4 +1,4 @@
-Used the following code to get the flag. `ls -a` lists hidden files also. Files which start with `.` are hidden files.
+Used the following code to get the flag. `ls -a` lists hidden files also. Files which start with `.` are hidden files. 
 
 ```
 ls

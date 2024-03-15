@@ -21,4 +21,9 @@ Used `gzip -d data8.gz` to decompress the file. Used `file data8` to know the ty
 The password is wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
 ```
 
+`xxd` is used the encode or decode hex-dump files.
+`gzip` is used the encode or decode gzip files that is files in .gz format.
+`bzip2` is used the encode or decode bzip2 files that is files in .bz2 format.
+`tar` is used to archive or extract single files in .tar format.
+
 Flag: `wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw`

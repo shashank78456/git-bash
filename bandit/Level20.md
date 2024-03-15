@@ -1,5 +1,4 @@
 Executed `bandit20-do` using `.\bandit20-do` and got the output:
-
 ```
 Run a command as another user.
   Example: ./bandit20-do id
