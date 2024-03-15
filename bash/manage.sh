@@ -28,6 +28,10 @@ add_key() {
     echo -e "==========================================================================="
     read -p "Enter the key number : " keyn
     
+    len=${#karr[@]}
+
+    if [ "$kyn" -le "$len" ]
+    then
     ((keyn--))
     key=${karr[$keyn]}
 
@@ -36,6 +40,11 @@ add_key() {
     git config --global commit.gpgsign true
     
     echo "Key added to git. Please add this key to your Github account"
+
+    else
+    echo "No such key exists"
+
+    fi
 }
 
 delete_keys() {
@@ -55,6 +64,10 @@ delete_keys() {
     echo -e "==========================================================================="
     read -p "Enter the key-number of the key to be deleted: " kyn
 
+    len=${#karr[@]}
+
+    if [ "$kyn" -le "$len" ]
+    then
     ((kyn--))
     keyid=${karr[kyn]}
 
@@ -62,4 +75,9 @@ delete_keys() {
     gpg --delete-key $keyid
     echo "Selected key has been deleted"
     echo -e "==========================================================================="
+
+    else
+    echo "No such key exists"
+
+    fi
 }
