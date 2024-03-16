@@ -30,7 +30,7 @@ add_key() {
     
     len=${#karr[@]}
 
-    if [ "$kyn" -le "$len" ]  &&  [ "$kyn" -gt 0 ]
+    if [ "$keyn" -le "$len" ]  &&  [ "$keyn" -gt 0 ]
     then
     ((keyn--))
     key=${karr[$keyn]}
